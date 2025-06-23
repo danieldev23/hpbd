@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Chúc Mừng Sinh Nhật Nguyên Hồng! 🎂</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .dancing-script {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        /* Floating hearts animation */
+        .heart {
+            position: absolute;
+            color: #ff69b4;
+            animation: float 3s ease-in-out infinite;
+            font-size: 1.5rem;
+        }
+        
+        .heart:nth-child(odd) {
+            animation-delay: 1s;
+        }
+        
+        .heart:nth-child(even) {
+            animation-delay: 2s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        /* Sparkle animation */
+        .sparkle {
+            position: absolute;
+            color: #ffd700;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        
+        /* Birthday cake animation */
+        .cake-bounce {
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Gradient text animation */
+        .gradient-text {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Photo frame animation */
+        .photo-frame {
+            border: 8px solid #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: photoGlow 4s ease-in-out infinite;
+        }
+        
+        @keyframes photoGlow {
+            0%, 100% { box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+            50% { box-shadow: 0 15px 40px rgba(255,105,180,0.5); }
+        }
+        
+        /* Confetti animation */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            animation: confetti-fall 3s linear infinite;
+        }
+        
+        .confetti:nth-child(1) { background: #ff6b6b; left: 10%; animation-delay: 0s; }
+        .confetti:nth-child(2) { background: #4ecdc4; left: 20%; animation-delay: 0.5s; }
+        .confetti:nth-child(3) { background: #45b7d1; left: 30%; animation-delay: 1s; }
+        .confetti:nth-child(4) { background: #96ceb4; left: 40%; animation-delay: 1.5s; }
+        .confetti:nth-child(5) { background: #feca57; left: 50%; animation-delay: 2s; }
+        .confetti:nth-child(6) { background: #ff9ff3; left: 60%; animation-delay: 2.5s; }
+        .confetti:nth-child(7) { background: #54a0ff; left: 70%; animation-delay: 3s; }
+        .confetti:nth-child(8) { background: #5f27cd; left: 80%; animation-delay: 3.5s; }
+        .confetti:nth-child(9) { background: #00d2d3; left: 90%; animation-delay: 4s; }
+        
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+        
+        /* Button hover effect */
+        .birthday-btn {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .birthday-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(255,105,180,0.4);
+        }
+        
+        .birthday-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .birthday-btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Background gradient animation */
+        .bg-animated {
+            background: linear-gradient(-45deg, #ff9a9e, #fecfef, #fecfef, #f093fb);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Pulsing heart */
+        .pulse-heart {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-animated min-h-screen">
+    <!-- Confetti -->
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    
+    <!-- Floating hearts -->
+    <div class="heart" style="top: 10%; left: 5%;">💖</div>
+    <div class="heart" style="top: 20%; left: 90%;">💕</div>
+    <div class="heart" style="top: 60%; left: 10%;">💗</div>
+    <div class="heart" style="top: 80%; left: 85%;">💝</div>
+    <div class="heart" style="top: 40%; left: 95%;">💘</div>
+    
+    <!-- Sparkles -->
+    <div class="sparkle" style="top: 15%; left: 15%;">✨</div>
+    <div class="sparkle" style="top: 25%; left: 75%;">⭐</div>
+    <div class="sparkle" style="top: 65%; left: 20%;">🌟</div>
+    <div class="sparkle" style="top: 75%; left: 80%;">✨</div>
+    
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-6xl md:text-8xl font-bold dancing-script gradient-text mb-4">
+                Chúc Mừng Sinh Nhật! 🎉
+            </h1>
+            <div class="text-2xl md:text-3xl text-pink-600 font-semibold mb-2">
+                🎂 Happy Birthday To Hong 🎂
+            </div>
+            <div class="cake-bounce text-4xl">🎂🕯️🎂</div>
+        </div>
+        
+        <!-- Photo Section -->
+        <div class="flex justify-center mb-12">
+            <div class="photo-frame rounded-3xl overflow-hidden max-w-sm">
+                <img src="crush.jpg" 
+                     alt="Ảnh của Crush" 
+                     class="w-full h-auto object-cover"
+                     id="crushPhoto">
+            </div>
+        </div>
+        
+        <!-- Birthday Message -->
+        <div class="max-w-4xl mx-auto text-center mb-12">
+            <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl">
+                <h2 class="text-3xl md:text-4xl dancing-script text-pink-600 mb-6 font-bold">
+                    💝 Lời Chúc Sinh Nhật Dành Cho Nguyên Hồng 💝
+                </h2>
+                
+                <div class="text-lg md:text-xl text-gray-700 leading-relaxed space-y-4">
+                    <p class="font-semibold text-pink-500">🌸 Chúc m sinh nhật thật vui vẻ và hạnh phúc! 🌸</p>
+                    
+                    <p>Hôm nay là ngày đặc biệt của m, ngày mà thế giới được thêm một người tuyệt vời như m. 
+                    Chúc m luôn tươi cười như hoa, xinh đẹp như công chúa, và hạnh phúc mỗi ngày! 💖</p>
+                    
+                    <p>Hy vọng rằng tuổi mới sẽ mang đến cho m thật nhiều niềm vui, thành công và những điều tốt đẹp nhất. 
+                    M xứng đáng có được tất cả những gì tuyệt vời nhất trên đời! ✨</p>
+                    
+                    <p class="font-semibold text-purple-600">🎈 Sinh nhật vui vẻ, người con gái đặc biệt! 🎈</p>
+                </div>
+                
+                <div class="mt-8 pulse-heart">
+                    <span class="text-4xl">💕💖💕</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button onclick="createFireworks()" 
+                    class="birthday-btn bg-gradient-to-r from-pink-400 to-purple-500 text-white px-6 py-3 rounded-full font-semibold text-lg shadow-lg">
+                🎆 Pháo Hoa 🎆
+            </button>
+            
+            <button onclick="showLoveMessage()" 
+                    class="birthday-btn bg-gradient-to-r from-red-400 to-pink-500 text-white px-6 py-3 rounded-full font-semibold text-lg shadow-lg">
+                💕 Tin Nhắn Đặc Biệt 💕
+            </button>
+            
+            <button onclick="playBirthdaySong()" 
+                    class="birthday-btn bg-gradient-to-r from-blue-400 to-purple-500 text-white px-6 py-3 rounded-full font-semibold text-lg shadow-lg">
+                🎵 Nhạc Sinh Nhật 🎵
+            </button>
+        </div>
+        
+        <!-- Wishes Collection -->
+        <div class="max-w-2xl mx-auto mb-12">
+            <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
+                <h3 class="text-2xl dancing-script text-center text-pink-600 mb-4 font-bold">
+                    🌟 Những Lời Chúc Đặc Biệt 🌟
+                </h3>
+                <div class="grid md:grid-cols-2 gap-4 text-center">
+                    <div class="bg-pink-100 rounded-xl p-4">
+                        <div class="text-2xl mb-2">🎂</div>
+                        <p class="text-sm text-gray-700">"Tuổi mới nhiều niềm vui"</p>
+                    </div>
+                    <div class="bg-purple-100 rounded-xl p-4">
+                        <div class="text-2xl mb-2">💝</div>
+                        <p class="text-sm text-gray-700">"Luôn xinh đẹp rạng ngời"</p>
+                    </div>
+                    <div class="bg-blue-100 rounded-xl p-4">
+                        <div class="text-2xl mb-2">🌈</div>
+                        <p class="text-sm text-gray-700">"Thành công trong mọi việc"</p>
+                    </div>
+                    <div class="bg-yellow-100 rounded-xl p-4">
+                        <div class="text-2xl mb-2">✨</div>
+                        <p class="text-sm text-gray-700">"Hạnh phúc mỗi ngày"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="text-center">
+           
+            <div class="text-lg text-white font-semibold">
+                🎉 Chúc m sinh nhật thật là vui! 🎉
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for love messages -->
+    <div id="loveModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-3xl p-8 max-w-md mx-4 text-center">
+            <div class="text-4xl mb-4">💕</div>
+            <h3 class="text-2xl dancing-script text-pink-600 mb-4 font-bold">Tin Nhắn Đặc Biệt</h3>
+            <p id="loveText" class="text-gray-700 mb-6"></p>
+            <button onclick="closeLoveModal()" class="bg-pink-500 text-white px-6 py-2 rounded-full hover:bg-pink-600">
+                Đóng 💖
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Array of love messages
+        const loveMessages = [
+            "Chúc m luôn tỏa sáng như ngôi sao! 🌟",
+            "M xứng đáng với tất cả những điều tốt đẹp nhất! 💖",
+            "Hy vọng nụ cười của m sẽ luôn rạng rỡ! 😊",
+            "Chúc m sinh nhật thật nhiều niềm vui và hạnh phúc! 🎉"
+        ];
+        
+        // Create fireworks effect
+        function createFireworks() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.innerHTML = '🎆';
+                    firework.style.position = 'fixed';
+                    firework.style.left = Math.random() * window.innerWidth + 'px';
+                    firework.style.top = Math.random() * window.innerHeight + 'px';
+                    firework.style.fontSize = '2rem';
+                    firework.style.zIndex = '1000';
+                    firework.style.animation = 'firework 2s ease-out forwards';
+                    
+                    document.body.appendChild(firework);
+                    
+                    setTimeout(() => {
+                        firework.remove();
+                    }, 2000);
+                }, i * 100);
+            }
+        }
+        
+        // Add firework animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes firework {
+                0% { transform: scale(0) rotate(0deg); opacity: 1; }
+                50% { transform: scale(1.5) rotate(180deg); opacity: 1; }
+                100% { transform: scale(0) rotate(360deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Show love message
+        function showLoveMessage() {
+            const modal = document.getElementById('loveModal');
+            const loveText = document.getElementById('loveText');
+            const randomMessage = loveMessages[Math.floor(Math.random() * loveMessages.length)];
+            
+            loveText.textContent = randomMessage;
+            modal.classList.remove('hidden');
+        }
+        
+        // Close love modal
+        function closeLoveModal() {
+            document.getElementById('loveModal').classList.add('hidden');
+        }
+        
+        // Create audio context for birthday song
+        let audioContext;
+        let isPlaying = false;
+        
+        // Play birthday song with real audio
+        function playBirthdaySong() {
+            if (isPlaying) return;
+            
+            // Visual effects
+            const songEmojis = ['🎵', '🎶', '🎼', '🎤'];
+            let count = 0;
+            
+            const interval = setInterval(() => {
+                const note = document.createElement('div');
+                note.innerHTML = songEmojis[count % songEmojis.length];
+                note.style.position = 'fixed';
+                note.style.left = '50%';
+                note.style.top = '50%';
+                note.style.transform = 'translate(-50%, -50%)';
+                note.style.fontSize = '3rem';
+                note.style.zIndex = '1000';
+                note.style.animation = 'noteFloat 1s ease-out forwards';
+                
+                document.body.appendChild(note);
+                
+                setTimeout(() => note.remove(), 1000);
+                
+                count++;
+                if (count >= 16) {
+                    clearInterval(interval);
+                }
+            }, 200);
+            
+            // Try to play MP3 file first, fallback to synthesized melody
+            const audio = new Audio('./hpbd.mp3');
+            audio.play().catch(() => {
+                // If MP3 fails, play synthesized melody
+                playHappyBirthdayMelody();
+            });
+        }
+        
+        // Happy Birthday melody using Web Audio API
+        function playHappyBirthdayMelody() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            
+            if (isPlaying) return;
+            isPlaying = true;
+            
+            // Happy Birthday notes (simplified melody)
+            const notes = [
+                {freq: 264, duration: 0.5}, // C4 - Happy
+                {freq: 264, duration: 0.5}, // C4 - Birth-
+                {freq: 297, duration: 1.0}, // D4 - day
+                {freq: 264, duration: 1.0}, // C4 - to
+                {freq: 352, duration: 1.0}, // F4 - you
+                {freq: 330, duration: 2.0}, // E4 - (pause)
+                
+                {freq: 264, duration: 0.5}, // C4 - Happy
+                {freq: 264, duration: 0.5}, // C4 - Birth-
+                {freq: 297, duration: 1.0}, // D4 - day
+                {freq: 264, duration: 1.0}, // C4 - to
+                {freq: 396, duration: 1.0}, // G4 - you
+                {freq: 352, duration: 2.0}, // F4 - (pause)
+                
+                {freq: 264, duration: 0.5}, // C4 - Happy
+                {freq: 264, duration: 0.5}, // C4 - Birth-
+                {freq: 528, duration: 1.0}, // C5 - day
+                {freq: 440, duration: 1.0}, // A4 - dear
+                {freq: 352, duration: 1.0}, // F4 - [name]
+                {freq: 330, duration: 1.0}, // E4
+                {freq: 297, duration: 2.0}, // D4 - (pause)
+                
+                {freq: 469, duration: 0.5}, // Bb4 - Happy
+                {freq: 469, duration: 0.5}, // Bb4 - Birth-
+                {freq: 440, duration: 1.0}, // A4 - day
+                {freq: 352, duration: 1.0}, // F4 - to
+                {freq: 396, duration: 1.0}, // G4 - you
+                {freq: 352, duration: 2.0}  // F4 - !
+            ];
+            
+            let startTime = audioContext.currentTime;
+            
+            notes.forEach((note, index) => {
+                playNote(note.freq, startTime, note.duration);
+                startTime += note.duration;
+            });
+            
+            // Reset playing flag when song ends
+            setTimeout(() => {
+                isPlaying = false;
+            }, startTime * 1000);
+        }
+        
+        // Play individual note
+        function playNote(frequency, startTime, duration) {
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.setValueAtTime(frequency, startTime);
+            oscillator.type = 'sine';
+            
+            // Envelope for smoother sound
+            gainNode.gain.setValueAtTime(0, startTime);
+            gainNode.gain.linearRampToValueAtTime(0.3, startTime + 0.1);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
+            
+            oscillator.start(startTime);
+            oscillator.stop(startTime + duration);
+        }
+        
+        // Add note float animation
+        const noteStyle = document.createElement('style');
+        noteStyle.textContent = `
+            @keyframes noteFloat {
+                0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+                50% { transform: translate(-50%, -70%) scale(1.2); opacity: 1; }
+                100% { transform: translate(-50%, -90%) scale(0); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(noteStyle);
+        
+        // Auto-create some effects on load
+        window.addEventListener('load', () => {
+            setTimeout(createFireworks, 1000);
+            
+            // Add click handler to photo
+            document.getElementById('crushPhoto').addEventListener('click', () => {
+                showLoveMessage();
+            });
+        });
+        
+        // Add some random floating elements
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '💖';
+                heart.style.position = 'fixed';
+                heart.style.left = Math.random() * window.innerWidth + 'px';
+                heart.style.top = window.innerHeight + 'px';
+                heart.style.fontSize = '1.5rem';
+                heart.style.zIndex = '10';
+                heart.style.animation = 'floatUp 4s linear forwards';
+                heart.style.pointerEvents = 'none';
+                
+                document.body.appendChild(heart);
+                
+                setTimeout(() => heart.remove(), 4000);
+            }
+        }, 2000);
+        
+        // Add float up animation
+        const floatStyle = document.createElement('style');
+        floatStyle.textContent = `
+            @keyframes floatUp {
+                0% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+                100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(floatStyle);
+    </script>
+</body>
+</html>
